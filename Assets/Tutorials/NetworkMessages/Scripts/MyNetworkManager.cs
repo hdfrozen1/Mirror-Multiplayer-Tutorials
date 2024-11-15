@@ -12,10 +12,10 @@ namespace DapperDino.Mirror.Tutorials.NetworkMessages
             ServerChangeScene("Scene_NetworkMessagesLobby");
         }
 
-        [ContextMenu("Send Notification")]
-        private void SendNotification()
-        {
-            NetworkServer.SendToAll(new Notification { content = notificationMessage });
-        }
+        // [ContextMenu("Send Notification")]
+        // private void SendNotification()
+        // {
+        //     NetworkServer.SendToAll(new Notification { content = notificationMessage });
+        // }
     }
 }

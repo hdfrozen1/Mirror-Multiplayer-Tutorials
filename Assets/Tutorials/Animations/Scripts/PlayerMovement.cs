@@ -16,7 +16,7 @@ namespace DapperDino.Mirror.Tutorials.Animations
         [ClientCallback]
         private void Update()
         {
-            if (!hasAuthority) { return; }
+            if (!isOwned) { return; }
 
             var movement = new Vector3();
 

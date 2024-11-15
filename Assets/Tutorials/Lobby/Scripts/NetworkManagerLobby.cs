@@ -43,25 +43,25 @@ namespace DapperDino.Mirror.Tutorials.Lobby
 
             foreach (var prefab in spawnablePrefabs)
             {
-                ClientScene.RegisterPrefab(prefab);
+                NetworkClient.RegisterPrefab(prefab);
             }
         }
 
-        public override void OnClientConnect(NetworkConnection conn)
-        {
-            base.OnClientConnect(conn);
+        // public override void OnClientConnect(NetworkConnection conn)
+        // {
+        //     base.OnClientConnect(conn);
 
-            OnClientConnected?.Invoke();
-        }
+        //     OnClientConnected?.Invoke();
+        // }
 
-        public override void OnClientDisconnect(NetworkConnection conn)
-        {
-            base.OnClientDisconnect(conn);
+        // public override void OnClientDisconnect(NetworkConnection conn)
+        // {
+        //     base.OnClientDisconnect(conn);
 
-            OnClientDisconnected?.Invoke();
-        }
+        //     OnClientDisconnected?.Invoke();
+        // }
 
-        public override void OnServerConnect(NetworkConnection conn)
+        public override void OnServerConnect(NetworkConnectionToClient conn)
         {
             if (numPlayers >= maxConnections)
             {
@@ -76,7 +76,7 @@ namespace DapperDino.Mirror.Tutorials.Lobby
             }
         }
 
-        public override void OnServerAddPlayer(NetworkConnection conn)
+        public override void OnServerAddPlayer(NetworkConnectionToClient conn)
         {
             if (SceneManager.GetActiveScene().name == menuScene)
             {
@@ -90,7 +90,7 @@ namespace DapperDino.Mirror.Tutorials.Lobby
             }
         }
 
-        public override void OnServerDisconnect(NetworkConnection conn)
+        public override void OnServerDisconnect(NetworkConnectionToClient conn)
         {
             if (conn.identity != null)
             {
@@ -176,11 +176,11 @@ namespace DapperDino.Mirror.Tutorials.Lobby
             }
         }
 
-        public override void OnServerReady(NetworkConnection conn)
-        {
-            base.OnServerReady(conn);
+        // public override void OnServerReady(NetworkConnection conn)
+        // {
+        //     base.OnServerReady(conn);
 
-            OnServerReadied?.Invoke(conn);
-        }
+        //     OnServerReadied?.Invoke(conn);
+        // }
     }
 }

@@ -13,12 +13,12 @@ namespace DapperDino.Mirror.Tutorials.NetworkMessages
     {
         [SerializeField] private TMP_Text notificationsText = null;
 
-        private void Start()
-        {
-            if (!NetworkClient.active) { return; }
+        // private void Start()
+        // {
+        //     if (!NetworkClient.active) { return; }
 
-            NetworkClient.RegisterHandler<Notification>(OnNotification);
-        }
+        //     NetworkClient.RegisterHandler<Notification>(OnNotification);
+        // }
 
         private void OnNotification(NetworkConnection conn, Notification msg)
         {

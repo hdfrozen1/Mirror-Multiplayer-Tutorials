@@ -10,7 +10,7 @@ namespace DapperDino.Mirror.Tutorials.Ownership
         [Client]
         private void Update()
         {
-            if (!hasAuthority) { return; }
+            if (!isOwned) { return; }
 
             if (!Input.GetKeyDown(KeyCode.Space)) { return; }
 

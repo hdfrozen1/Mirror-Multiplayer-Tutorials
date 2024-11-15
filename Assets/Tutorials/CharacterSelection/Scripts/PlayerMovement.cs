@@ -16,7 +16,7 @@ namespace DapperDino.Mirror.Tutorials.CharacterSelection
         [ClientCallback]
         private void Update()
         {
-            if (!hasAuthority) { return; }
+            if (!isOwned) { return; }
 
             var movement = new Vector3();
 

@@ -23,7 +23,7 @@ namespace DapperDino.Mirror.Tutorials.Chat
         [ClientCallback]
         private void OnDestroy()
         {
-            if (!hasAuthority) { return; }
+            if (!isOwned) { return; }
 
             OnMessage -= HandleNewMessage;
         }
